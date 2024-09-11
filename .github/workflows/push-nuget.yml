@@ -50,7 +50,7 @@ jobs:
     - name: Set Git User Info
       run: 
         git config user.name "MaskymLibovych"
-        git config user.email "maksym.libovych@gmail.com"
+        git config user.email "makslibovich@gmail.com"
 
     - name: Create and Push Tag
       run: 
