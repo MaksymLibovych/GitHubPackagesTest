@@ -47,14 +47,14 @@ jobs:
     - name: Publish to GitHub Packages
       run: dotnet nuget push "TestConsole/bin/Release/*.nupkg" --api-key ${{ secrets.PAT_KEY }} --source "github" --skip-duplicate
 
-    - name: Set Git User Info
-      run: 
-        git config user.name "MaskymLibovych"
-        git config user.email "makslibovich@gmail.com"
+    # - name: Set Git User Info
+    #   run: 
+    #     git config user.name "MaskymLibovych"
+    #     git config user.email "makslibovich@gmail.com"
 
     - name: Create and Push Tag
       run: 
-        VERSION=$(grep '<Version>' TestConsole/YourProject.csproj | sed -e 's/<Version>\(.*\)<\/Version>/\1/')
+        VERSION=$(grep '<Version>' TestConsole/TestConsole.csproj | sed -e 's/<Version>\(.*\)<\/Version>/\1/')
         git tag -a "v$VERSION" -m "Tag for NuGet package version $VERSION"
         git push origin "v$VERSION"
 
