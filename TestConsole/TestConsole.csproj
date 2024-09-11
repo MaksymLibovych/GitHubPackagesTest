@@ -19,7 +19,5 @@
     <RepositoryUrl>https://github.com/MaksymLibovych/GitHubPackagesTest</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Some release notes</PackageReleaseNotes>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>PackageIcon.png</PackageIcon>
   </PropertyGroup>
 </Project>
