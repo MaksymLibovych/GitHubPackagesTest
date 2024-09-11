@@ -51,7 +51,11 @@ jobs:
       run: |
         git config user.email "makslibovich@gmail.com"
         git config user.name "${{ github.actor }}"
-        VERSION=$(grep '<Version>' TestConsole/TestConsole.csproj | sed -e 's/<Version>\(.*\)<\/Version>/\1/')
+        echo "Checking if csproj file exists"
+        ls TestConsole/TestConsole.csproj || exit 1
+        cat TestConsole/TestConsole.csproj
+        VERSION=$(grep '<Version>' TestConsole/TestConsole.csproj | sed -e 's/.*<Version>\(.*\)<\/Version>.*/\1/' | tr -d '[:space:]')
+        echo "Extracted version: '$VERSION'"
         git tag -a "v$VERSION" -m "Tag for NuGet package version $VERSION"
         git push origin "v$VERSION"
 
