@@ -6,11 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-	  <NoDefaultExcludes>true</NoDefaultExcludes>
-	  <IncludeBuildOutput>false</IncludeBuildOutput>
-	  <IncludeContentInPack>true</IncludeContentInPack>
-	  <ContentTargetFolders>content</ContentTargetFolders>
-
 	  <Title>TitleTestConsole</Title>
     <Authors>Maksym Libovych</Authors>
     <Product>ProductTestConsole</Product>
