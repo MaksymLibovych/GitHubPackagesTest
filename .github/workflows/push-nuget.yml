@@ -49,6 +49,8 @@ jobs:
 
     - name: Create and Push Tag
       run: |
+        git config user.email "makslibovich@gmail.com"
+        git config user.name "${{ github.actor }}"
         VERSION=$(grep '<Version>' TestConsole/TestConsole.csproj | sed -e 's/<Version>\(.*\)<\/Version>/\1/')
         git tag -a "v$VERSION" -m "Tag for NuGet package version $VERSION"
         git push origin "v$VERSION"
