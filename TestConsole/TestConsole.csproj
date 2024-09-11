@@ -5,18 +5,27 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>TitleTestConsole</Title>
+    <Authors>Maksym Libovych</Authors>
+    <Product>ProductTestConsole</Product>
+    <Description>Description Test Console</Description>
+    <Copyright>copyright Test Console</Copyright>
+    <PackageIcon>PackageIcon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/MaksymLibovych/GitHubPackagesTest</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Some release notes</PackageReleaseNotes>
   </PropertyGroup>
 
-	<PropertyGroup>
-		<PackageType>TestConsolePackageType</PackageType>
-		<PackageId>TestConsolePackageId</PackageId>
-		<PackageVersion>1.0.0.0</PackageVersion>
-		<Authors>Piche</Authors>
-		<Description>Some description</Description>
-		<PackageTags>revit;bim</PackageTags>
-		<Title>Test Console Title</Title>
-		<PackageReleaseNotes>TestConsolePackageReleaseNotes</PackageReleaseNotes>
-	</PropertyGroup>
+  <ItemGroup>
+    <None Include="..\.nuget\PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
