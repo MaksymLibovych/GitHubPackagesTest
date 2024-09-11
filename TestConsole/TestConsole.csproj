@@ -15,13 +15,11 @@
     <RepositoryUrl>https://github.com/MaksymLibovych/GitHubPackagesTest</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Some release notes</PackageReleaseNotes>
+	  <PackageIcon>images\PackageIcon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\.nuget\PackageIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+	  <None Include=".nuget\PackageIcon.png" PackagePath="images\" Pack="true" />
     <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

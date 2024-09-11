@@ -1,5 +1,4 @@
 name: Publish NuGet Package
-run-name: Publish NuGet Package
 
 on:
   push:
