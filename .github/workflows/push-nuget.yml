@@ -40,5 +40,5 @@ jobs:
 
     - name: Publish to GitHub Packages
       env:
-        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_PAT }}
       run: dotnet nuget push "TestConsole/bin/Release/*.nupkg" --api-key $NUGET_AUTH_TOKEN --source "github"
