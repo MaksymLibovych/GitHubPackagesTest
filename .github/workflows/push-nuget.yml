@@ -30,7 +30,7 @@ jobs:
     - name: Add GitHub Packages NuGet source if not present
       if: steps.check-source.outputs.source != 'github'
       run: |
-        dotnet nuget add source --username ${{ secrets.GITHUB_USERNAME }} --password ${{ secrets.GITHUB_PAT }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ secrets.GITHUB_USERNAME }}/index.json"
+        dotnet nuget add source --username ${{ github.actor }} --password ${{ secrets.GITHUB_PAT }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.actor }}/index.json"
 
     - name: Build project
       run: dotnet build --configuration Release
