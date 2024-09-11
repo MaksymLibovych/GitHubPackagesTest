@@ -32,8 +32,8 @@ jobs:
     #   run: |
     #     dotnet nuget add source --username ${{ github.actor }} --password ${{ secrets.GITHUB_PAT }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.actor }}/index.json"
 
-    # - name: Build project
-    #   run: dotnet build --configuration Release
+    - name: Build project
+      run: dotnet build --configuration Release
 
     - name: Pack NuGet package
       run: dotnet pack --configuration Release
