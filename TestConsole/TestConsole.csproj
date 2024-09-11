@@ -5,7 +5,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Title>TitleTestConsole</Title>
+
+	  <NoDefaultExcludes>true</NoDefaultExcludes>
+	  <IncludeBuildOutput>false</IncludeBuildOutput>
+	  <IncludeContentInPack>true</IncludeContentInPack>
+	  <ContentTargetFolders>content</ContentTargetFolders>
+
+	  <Title>TitleTestConsole</Title>
     <Authors>Maksym Libovych</Authors>
     <Product>ProductTestConsole</Product>
     <Description>Description Test Console</Description>
@@ -16,14 +22,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Some release notes</PackageReleaseNotes>
 	  <PackageIcon>images\PackageIcon.png</PackageIcon>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
 	  <None Include=".nuget\PackageIcon.png" PackagePath="images\" Pack="true" />
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+	  <None Include="Readme.md" PackagePath="" Pack="true" />
   </ItemGroup>
 
 </Project>
