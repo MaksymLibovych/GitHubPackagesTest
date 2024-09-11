@@ -16,18 +16,25 @@
     <Product>ProductTestConsole</Product>
     <Description>Description Test Console</Description>
     <Copyright>copyright Test Console</Copyright>
-    <PackageIcon>PackageIcon.png</PackageIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/MaksymLibovych/GitHubPackagesTest</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Some release notes</PackageReleaseNotes>
-	  <PackageIcon>images\PackageIcon.png</PackageIcon>
-	  <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>PackageIcon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-	  <None Include=".nuget\PackageIcon.png" PackagePath="images\" Pack="true" />
-	  <None Include="Readme.md" PackagePath="" Pack="true" />
+    <None Include=".nuget\PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
