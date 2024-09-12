@@ -14,6 +14,5 @@
     <RepositoryUrl>https://github.com/MaksymLibovych/GitHubPackagesTest</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Some release notes</PackageReleaseNotes>
-	  <Version>1.0.0</Version>
   </PropertyGroup>
 </Project>
