@@ -32,7 +32,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Run Unit Tests
-      run: dotnet test --no-build --configuration Release"
+      run: dotnet test --no-build --configuration Release
 
     - name: Check for existing NuGet source
       id: check-source
@@ -63,7 +63,15 @@ jobs:
         VERSION=$(grep '<Version>' TestConsole/TestConsole.csproj | sed -e 's/.*<Version>\(.*\)<\/Version>.*/\1/' | tr -d '[:space:]')
     
         echo "Extracted version: '$VERSION'"
-    
+
+        if git ls-remote --tags origin | grep "refs/tags/v$VERSION" > /dev/null; then
+          echo "Tag v$VERSION already exists, deleting it..."
+      
+          git tag -d "v$VERSION" || echo "Tag v$VERSION not found locally, skipping local deletion."
+      
+          git push --delete origin "v$VERSION" || echo "Failed to delete tag v$VERSION on remote."
+        fi
+
         git tag -a "v$VERSION" -m "Tag for NuGet package version $VERSION"
         git push origin "v$VERSION"
 
@@ -75,6 +83,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         VERSION=$(grep '<Version>' TestConsole/TestConsole.csproj | sed -e 's/.*<Version>\(.*\)<\/Version>.*/\1/' | tr -d '[:space:]')
+
+        if gh release view "v$VERSION" > /dev/null 2>&1; then
+          echo "Release for tag v$VERSION exists, deleting it..."
+      
+          gh release delete "v$VERSION" -y || echo "Failed to delete release v$VERSION."
+        fi
+
         gh release create "v$VERSION" --title "Release v$VERSION" --notes "Automatically generated release for version v$VERSION"
 
         
